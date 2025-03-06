@@ -1,0 +1,178 @@
+.rooms-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.room-card {
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.room-card:hover .room-price,
+.room-card:hover .room-status,
+.room-card:hover .room-desc,
+.room-card:hover .room-city,
+.room-card:hover .room-category {
+  color: rgb(2, 3, 3);
+  transform: translateY(-5px);
+}
+.room-card:hover .dbutton {
+  transform: translateY(-5px);
+}
+.room-card:hover .room-name {
+  color: rgb(6, 211, 23);
+  text-shadow: 1px 1px 1px rgb(6, 211, 23);
+  transform: translateY(-5px);
+  transform: translate(5px, -5px);
+}
+.room-image img {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.room-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.room-thumbnail {
+  position: relative;
+}
+.room-offer {
+  background-color: rgb(127, 221, 255);
+  padding: 0.2rem;
+  font-size: clamp(0.5rem, 1vw, 2rem);
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.room-desc,
+.room-city,
+.room-category {
+  color: rgb(128, 128, 128);
+  font-weight: 600;
+}
+img {
+  width: 100%;
+}
+.room-name {
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(2rem, 2vw, 4rem);
+}
+.room-desc {
+  text-overflow: ellipsis;
+
+  /* Needed to make it work */
+  overflow: hidden;
+  white-space: nowrap;
+}
+.room-adress {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#namanyay-search-btn {
+  background: #0099ff;
+  color: white;
+  font: "trebuchet ms", trebuchet;
+  padding: 10px 20px;
+  border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+  -o-border-radius: 0 5px 5px 0;
+  border: 0 none;
+  font-weight: bold;
+}
+
+#namanyay-search-box {
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  -o-border-radius: 5px 0 0 5px;
+  border: 0 none;
+  width: 160px;
+}
+
+/* General styles for the filter container */
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .filters-container select,
+  .filters-container input {
+    padding: 8px 12px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    width: 200px; /* Set width of filter options */
+  }
+  
+  .filters-container select:focus,
+  .filters-container input:focus {
+    border-color: #007bff;
+  }
+  
+  /* Add some margin to the search box */
+  #namanyay-search-box {
+    margin-right: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Button styling */
+  #namanyay-search-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #namanyay-search-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styles for filter options */
+  .filters-container select,
+  .filters-container input[type="number"] {
+    max-width: 180px; /* Limit max width for better spacing */
+  }
+  
+  /* For mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .filters-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .filters-container select,
+    .filters-container input {
+      width: 100%; /* Full width on mobile */
+      max-width: 400px; /* Limit the width on mobile */
+    }
+  
+    #namanyay-search-box {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    #namanyay-search-btn {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 10px;
+    }
+  }
+  

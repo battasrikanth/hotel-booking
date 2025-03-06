@@ -1,0 +1,469 @@
+/* src/styles.css ............................................................................................................................................... */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #0f1a2c;
+  --secondary-color: #f6ac0f;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --extra-light: #f8fafc;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Playfair Display", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* From Uiverse.io by vinodjangid07 */
+.ebutton {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: rgb(161, 255, 20);
+  border-radius: 30px;
+  color: rgb(19, 19, 19);
+  font-weight: 600;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  transition-duration: 0.5s;
+}
+
+.esvgIcon {
+  height: 25px;
+  transition-duration: 1.5s;
+}
+
+.ebell path {
+  fill: rgb(19, 19, 19);
+}
+
+.ebutton:hover {
+  background-color: rgb(192, 255, 20);
+  transition-duration: 0.5s;
+}
+
+.ebutton:active {
+  transform: scale(0.97);
+  transition-duration: 0.2s;
+}
+
+.ebutton:hover .esvgIcon {
+  transform: rotate(250deg);
+  transition-duration: 0.5s;
+}
+
+/* From Uiverse.io by vinodjangid07 */
+.dbutton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  background-color: #006aff;
+  border: 2px solid #c0dfff;
+  color: white;
+  gap: 3px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dtext {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.dsvg {
+  padding-top: 5px;
+  height: 100%;
+  width: fit-content;
+}
+.dsvg svg {
+  width: 20px;
+  height: 15px;
+}
+.dbutton:hover {
+  border: 2px solid #b1d8ff;
+  background-color: #1b7aff;
+}
+.dbutton:active {
+  border: 1.5px solid #c0dfff;
+}
+.dbutton:hover .dsvg svg {
+  animation: jello-vertical 0.9s both;
+  transform-origin: left;
+}
+
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/*...........Room*/
+/* Add these styles to your CSS file */
+.amenity-item {
+  display: flex;
+  align-items: center;
+}
+
+.amenity-item svg {
+  margin-right: 8px;
+}
+
+.booking-popup .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.booking-popup .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+button {
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.review-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+/* Flex layout for amenities */
+.amenity-item {
+  display: flex;
+  align-items: center;
+}
+
+.amenity-item svg {
+  margin-right: 8px;
+}
+
+/* Review card hover effect */
+.review-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+button {
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Popup styles */
+.booking-popup .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.booking-popup .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+.disabled-button {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Booking Success Page Styles */
+.booking-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e7f7e7;
+  padding: 20px;
+}
+
+.booking-success h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.booking-success button {
+  width: 250px;
+  padding: 12px;
+  font-size: 1.1rem;
+}
+
+.booking-success .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.booking-success .btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.booking-success .btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.booking-success .btn-info:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+}
+
+.booking-success .mt-2 {
+  margin-top: 15px;
+}
+/* Payment Page Styles */
+.payment-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.payment-page h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.payment-page p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.payment-page h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.payment-page button {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.payment-page .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.payment-page .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.payment-page .btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(38, 143, 255, 0.5);
+}
+
+.payment-page .mt-2 {
+  margin-top: 10px;
+}
+/* Form.css */
+
+.sform {
+  display: flex;
+
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.sform .title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.sform .title::before,
+.sform .title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
+
+.sform .title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
+
+.sform .title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.sform .message,
+.sform .signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.sform .signin {
+  text-align: center;
+}
+
+.sform .signin a {
+  color: royalblue;
+}
+
+.sform .signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.sform .flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.sform label {
+  position: relative;
+}
+
+.sform label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.sform label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.sform label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.sform label .input:focus + span,
+.sform label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.sform label .input:valid + span {
+  color: green;
+}
+
+.sform .submit {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: 0.3s ease;
+}
+
+.sform .submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+select {
+  background-color: beige;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  border: 1px solid black;
+}
+
