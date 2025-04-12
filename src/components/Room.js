@@ -1,9 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaWifi, FaParking, FaSwimmingPool, FaCoffee, FaBed, FaStar } from 'react-icons/fa';
 import { Carousel, Container, Row, Col, Button, Form } from 'react-bootstrap';
-import { data } from './data';
 
 function Room() {
   const userId = 6739;  // Assuming this is the user ID
@@ -15,7 +14,14 @@ function Room() {
   const [departureDate, setDepartureDate] = useState('');
   const [numPersons, setNumPersons] = useState(1);
 
-  const room = data.find((room) => room.id === parseInt(roomId));
+  const [room,setRoom]=useState([])
+    async function fetchRooms(){
+      const response =await fetch(`http://localhost:8086/rooms/${roomId}`)
+        const data=await response.json()
+        setRoom(data || [])
+  
+    }
+    useEffect(()=>{fetchRooms()},[])
 
   if (!room) return <p>Room not found</p>;
 

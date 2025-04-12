@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Rooms.css';
-import { data } from './data';
+// import { data } from './data';
 import { useUser } from '../context/UserContext';
+
 // Extract unique categories, cities, and offers
-const uniqueCategories = [...new Set(data.map((room) => room.category))];
-const uniqueCities = [...new Set(data.map((room) => room.city))];
-const uniqueOffers = [...new Set(data.map((room) => room.offer))];
+
 
 function Rooms() {
+  const [roomsData,setRoomsData]=useState([])
+  async function fetchRooms(){
+    const response =await fetch('http://localhost:8086/rooms')
+      const data=await response.json()
+      setRoomsData(data || [])
+
+  }
+  useEffect(()=>{fetchRooms()},[])
+  const uniqueCategories = [...new Set(roomsData.map((room) => room.category))];
+const uniqueCities = [...new Set(roomsData.map((room) => room.city))];
+const uniqueOffers = [...new Set(roomsData.map((room) => room.offer))];
   const userData=useUser();
   const isLoggedIn = userData.user.isLoggedIn;
   const [searchTerm, setSearchTerm] = useState('');
@@ -18,8 +28,8 @@ function Rooms() {
   const [maxPrice, setMaxPrice] = useState('');
   const [sharing, setSharing] = useState('');
   const [offer, setOffer] = useState('');
-
-  const filteredRooms = data
+  console.log("rooms: ",roomsData)
+  const filteredRooms = roomsData
     .filter((room) => room.name.toLowerCase().includes(searchTerm.toLowerCase()))
     .filter((room) => (category ? room.category === category : true))
     .filter((room) => (city ? room.city === city : true))
@@ -99,11 +109,12 @@ filteredRooms.length === 0 && (<h1 className='text-center'>No rooms found</h1>)}
         
         {
         filteredRooms.map((room) => (
+          
           <div key={room.id} className="room-card" style={{ padding: '0', backgroundColor: 'white' }}>
             <div className="room-image">
               <div className="room-thumbnail">
                 <img src={room.image} alt={room.name} />
-                <div className="room-offer bold-text">{room.offer}</div>
+                {room.offer&& <div className="room-offer bold-text">{room.offer}</div>}
               </div>
               <div className="room-details-container p-2">
                 <div className="room-details flex flex-row justify-between">
@@ -125,7 +136,7 @@ filteredRooms.length === 0 && (<h1 className='text-center'>No rooms found</h1>)}
                   <Link to={isLoggedIn ? `/room/${room.id}` : "/login"}>
   <button className="dbutton">
     <span className="dtext">Discover</span>
-    <span className="dsvg">{/* SVG icon here */}</span>
+    <span className="dsvg"></span>
   </button>
 </Link>
 

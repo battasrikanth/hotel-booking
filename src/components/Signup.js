@@ -16,7 +16,7 @@ function Signup() {
   return (
     <>
       <div style={{display:'flex',justifyContent:'center', backgroundColor:'white'}}>
-      <label htmlFor="signup-type">Select Signup Type:</label>
+      <label htmlFor="signup-type">Select User Type</label>
       <select id="signup-type" value={selectedValue} onChange={handleChange}>
         <option value="/signup/customersignup">Customer</option>
         <option value="/signup/vendorsignup">Vendor</option>

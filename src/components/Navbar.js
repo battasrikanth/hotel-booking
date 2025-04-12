@@ -99,9 +99,9 @@ const Navbar = () => {
         <div className={`items-center justify-between ${isOpen ? "flex" : "hidden"} w-full md:flex md:w-auto md:order-1`}>
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 bg-white md:space-x-8 md:flex-row md:mt-0">
             <li><Link to="/" className="block py-2 px-3 text-black hover:bg-gray-100" onClick={closeDropdown}>Home</Link></li>
-            <li><Link to="#rooms" className="block py-2 px-3 text-black hover:bg-gray-100" onClick={closeDropdown}>Rooms</Link></li>
-            <li><Link to="#about" className="block py-2 px-3 text-black hover:bg-gray-100" onClick={closeDropdown}>About</Link></li>
-            <li><Link to="#contact" className="block py-2 px-3 text-black hover:bg-gray-100" onClick={closeDropdown}>Contact</Link></li>
+            <li><a href="/#rooms" className="block py-2 px-3 text-black hover:bg-gray-100" onClick={closeDropdown}>Rooms</a></li>
+            <li><a href="/#about" className="block py-2 px-3 text-black hover:bg-gray-100" onClick={closeDropdown}>About</a></li>
+            <li><a href="/#contact" className="block py-2 px-3 text-black hover:bg-gray-100" onClick={closeDropdown}>Contact</a></li>
           </ul>
         </div>
       </div>

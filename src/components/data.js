@@ -2,8 +2,8 @@ export const data = [
     {
         id: 1,
         name: 'Room 1',
-        image: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/601928731.jpg?k=f2bd0de38dba9c0a5dcf674dffb5059d7333b2ec9334bcf09ee423e56e6a3aec&o=',
-        moreImages: ['https://cf.bstatic.com/xdata/images/hotel/max1280x900/601928813.jpg?k=293ed07d2102bfc31024b4c7becbb1a6f64f9a810905f28ea49280f8e7c52abc&o=&hp=1', 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/601928784.jpg?k=fdb93000f91ebcfa9ca2d3b9b3604ff6f9b5c94eede13167d958d814d8062585&o=&hp=1', 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/601928790.jpg?k=7ec46b3c2e21bb6083f4c101c8858396e08bfda48f21bd092992eae23674c233&o=&hp=1'],
+        image: 'https://th.bing.com/th/id/OIP.thpuHupvT19YNUyPvtHuvQHaE7?rs=1&pid=ImgDetMain',
+        moreImages: ['https://images.squarespace-cdn.com/content/v1/5e72c8bfe21ad940ba788673/1620923464746-9P9CHDE3GWWYHK2WWALV/hostel-dorm-bedroom-two.jpg', 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/049b7e66877077.5b25eed7779a7.jpg', 'https://hostelos.hr/wp-content/uploads/2022/04/10.jpg'],
         description: 'This is room 1',
         category: 'Deluxe',
         offer: '20% off',
