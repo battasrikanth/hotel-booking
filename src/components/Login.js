@@ -40,7 +40,20 @@ export default function Login() {
 
       navigate("/");
     } catch (error) {
-      console.error("Error:", error);
+      const userrData = {
+        userId: "C12345",
+        firstName: "John",
+        lastName: "Doe",
+        gender: "Male",
+        age: 30,
+        phoneNumber: "9876543210",
+        adhaarNumber: "1234-5678-9012",
+        occupation: "Engineer",
+        email: "john.doe@example.com"
+    };
+      userData.login(userrData, rememberMe);
+      alert('failed to connect with server, default values will be shown')
+      setInterval(()=>{ navigate("/");},0)
       setError(error.message || "Something went wrong. Try again.");
     }
   };

@@ -2,12 +2,12 @@ import React,{useContext,useState} from 'react'
 import { useUser } from '../context/UserContext';
 function UpdateCustomer() {
   const { user } = useUser();
-  console.log(user)
+  
   return (
     <>
     <form >
           
-          
+          <h1> Coming soon...</h1>
          
         </form> 
         </>

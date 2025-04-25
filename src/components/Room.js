@@ -3,7 +3,7 @@ import React, { useState,useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaWifi, FaParking, FaSwimmingPool, FaCoffee, FaBed, FaStar } from 'react-icons/fa';
 import { Carousel, Container, Row, Col, Button, Form } from 'react-bootstrap';
-
+import { defaultData } from './data';
 function Room() {
   const userId = 6739;  // Assuming this is the user ID
   const { roomId } = useParams();
@@ -16,9 +16,17 @@ function Room() {
 
   const [room,setRoom]=useState([])
     async function fetchRooms(){
-      const response =await fetch(`http://localhost:8086/rooms/${roomId}`)
+      try{
+        const response =await fetch(`http://localhost:8086/rooms/${roomId}`)
         const data=await response.json()
         setRoom(data || [])
+      }
+      catch(error){
+        console.log("failed to connect to server, default room details are being shown")
+        const selectedRoom= defaultData.filter((item)=>item.id==roomId)
+        setRoom(selectedRoom[0])
+      
+      }
   
     }
     useEffect(()=>{fetchRooms()},[])
@@ -71,7 +79,7 @@ function Room() {
           <Carousel>
             <Carousel.Item>
               <img
-                src={room.image || "--"}
+                src={room.image || "https://images.jdmagicbox.com/comp/thanjavur/f5/9999p4362.4362.171210121517.i9f5/catalogue/vijayam-ladies-hostel-rajah-serfoji-government-college-thanjavur-hostels-for-women-8zpws.jpg"}
                 alt={room.name || "--"}
                 style={{ width: '100%', height: '50vh', objectFit: 'cover' }}
               />
@@ -79,7 +87,7 @@ function Room() {
             {room.moreImages && room.moreImages.map((image, index) => (
               <Carousel.Item key={index}>
                 <img
-                  src={image || "--"}
+                  src={'https://images.jdmagicbox.com/comp/thanjavur/f5/9999p4362.4362.171210121517.i9f5/catalogue/vijayam-ladies-hostel-rajah-serfoji-government-college-thanjavur-hostels-for-women-8zpws.jpg' || "--"}
                   alt={`Room image ${index + 1}`}
                   style={{ width: '100%', height: '50vh', objectFit: 'cover' }}
                 />
@@ -91,7 +99,7 @@ function Room() {
           <h1>{room.name || "--"}</h1>
           <p>{room.description || "--"}</p>
           <p><strong>Price: </strong>₹{room.price || "--"} per day</p>
-          <p><strong>Location: </strong>{room.address_line || "--"}, {room.city || "--"}, {room.state || "--"}, {room.zip || "--"}</p>
+          <p><strong>Location: </strong>{room.address_line || "--"}, {room.city || "--"}, {room.state || "--"}, {room.zip || "--"} <a href={room.maps_link} target='_blank'>↗️</a></p>
           <p><strong>Offer: </strong>{room.offer || "--"}</p>
           <p><strong>Sharing: </strong>{room.sharing || "--"}</p>
           <p><strong>Status: </strong>{room.status || "--"}</p>
@@ -135,7 +143,8 @@ function Room() {
       </Row>
       <Row className="mt-4">
       <h4>Customer Reviews:</h4>
-        {reviews.length ? (
+        {
+        reviews.length ? (
           reviews.map((review, index) => (
             <Col md={4} key={index}>
               <div className="review-card p-3 border hover-effect">

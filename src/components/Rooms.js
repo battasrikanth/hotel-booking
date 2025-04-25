@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Rooms.css';
-// import { data } from './data';
+import { defaultData } from './data';
 import { useUser } from '../context/UserContext';
 
 // Extract unique categories, cities, and offers
@@ -10,11 +10,18 @@ import { useUser } from '../context/UserContext';
 function Rooms() {
   const [roomsData,setRoomsData]=useState([])
   async function fetchRooms(){
-    const response =await fetch('http://localhost:8086/rooms')
+    try{
+      const response =await fetch('http://localhost:8086/rooms')
       const data=await response.json()
-      setRoomsData(data || [])
+      setRoomsData(data || defaultData )
+    }
+   catch(err){
+    console.log("failed to connect to server, default rooms are being shown")
+     setRoomsData(defaultData )
+   }   
 
   }
+  let hasRun = false;
   useEffect(()=>{fetchRooms()},[])
   const uniqueCategories = [...new Set(roomsData.map((room) => room.category))];
 const uniqueCities = [...new Set(roomsData.map((room) => room.city))];
@@ -28,7 +35,7 @@ const uniqueOffers = [...new Set(roomsData.map((room) => room.offer))];
   const [maxPrice, setMaxPrice] = useState('');
   const [sharing, setSharing] = useState('');
   const [offer, setOffer] = useState('');
-  console.log("rooms: ",roomsData)
+
   const filteredRooms = roomsData
     .filter((room) => room.name.toLowerCase().includes(searchTerm.toLowerCase()))
     .filter((room) => (category ? room.category === category : true))
@@ -113,7 +120,8 @@ filteredRooms.length === 0 && (<h1 className='text-center'>No rooms found</h1>)}
           <div key={room.id} className="room-card" style={{ padding: '0', backgroundColor: 'white' }}>
             <div className="room-image">
               <div className="room-thumbnail">
-                <img src={room.image} alt={room.name} />
+                {/* <img src={room.image} alt={room.name} /> */}
+                <img src='https://images.jdmagicbox.com/comp/thanjavur/f5/9999p4362.4362.171210121517.i9f5/catalogue/vijayam-ladies-hostel-rajah-serfoji-government-college-thanjavur-hostels-for-women-8zpws.jpg' alt={room.name}></img>
                 {room.offer&& <div className="room-offer bold-text">{room.offer}</div>}
               </div>
               <div className="room-details-container p-2">
@@ -133,7 +141,7 @@ filteredRooms.length === 0 && (<h1 className='text-center'>No rooms found</h1>)}
                     <i className="bi bi-geo-alt"></i>
                     {room.city}
                   </p>
-                  <Link to={isLoggedIn ? `/room/${room.id}` : "/login"}>
+                  <Link to={`/room/${room.id}`}>
   <button className="dbutton">
     <span className="dtext">Discover</span>
     <span className="dsvg"></span>

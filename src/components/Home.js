@@ -10,6 +10,8 @@ function Home() {
   return (
     <>
     <div className="sree21">
+      <div style={{backgroundColor:'white', fontSize:'30px', color:'red'}}> <marquee behavior="scroll" direction="left">This Website is still under development. Some features may not be available yet....</marquee>
+      </div>
     <div id='intro' style={{boxShadow:'0 4px 6px -1px rgba(0, 0, 0, 0.1)',backgroundColor:'white'}}> <Intro/></div>
     <div id='about' className='p-8 my-16 flex flex-row gap-8' style={{ flexWrap:'wrap',alignItems:'center',justifyContent:'center',backgroundColor:'white'}}>
     <div style={{
