@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+HOTEL BOOKING WEB APPLICATION
+-----------------------------
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PROJECT OVERVIEW:
+This is a full-stack web application designed for booking hotel rooms. It supports three types of users: Customers, Vendors, and Admins. Each user type has access to a customized dashboard. The application provides room listings, user authentication, and vendor management features.
 
-## Available Scripts
+-----------------------------
+TECH STACK:
+Frontend:
+- React JS
+- React Router DOM
+- React Hooks (useState, useEffect, useContext)
 
-In the project directory, you can run:
+Backend:
+- Java
+- Spring Boot (MVC Architecture)
+- Spring Data JPA
 
-### `npm start`
+Database:
+- Oracle DB
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-----------------------------
+FEATURES:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. USER AUTHENTICATION:
+   - Separate login and signup for Customers, Vendors, and Admins.
+   - Secure credential storage and session handling.
 
-### `npm test`
+2. CUSTOMER DASHBOARD:
+   - Browse available rooms.
+   - View room details with images and amenities.
+   - Book or like rooms.
+   - Manage bookings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. VENDOR DASHBOARD:
+   - Add new rooms with details and images.
+   - Update room availability and pricing.
+   - View customer bookings.
 
-### `npm run build`
+4. ADMIN DASHBOARD:
+   - Monitor platform activity.
+   - View registered users (vendors/customers).
+   - Moderate listings and vendor performance.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. ROOM DATA:
+   - Real-world room image URLs.
+   - Google Maps links for location visualization.
+   - Amenities, pricing, and room type included.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-----------------------------
+DATABASE STRUCTURE:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- USERS TABLE: Stores user login and profile info.
+- ROOMS TABLE: Stores room details including vendorId.
+- ROOM_IMAGE TABLE: Stores multiple images per room.
+- BOOKINGS TABLE: Tracks customer bookings.
+- LIKED_ROOMS TABLE: Optional, for saving favorite rooms.
 
-### `npm run eject`
+-----------------------------
+SETUP INSTRUCTIONS:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository.
+2. Set up Oracle DB with necessary schema and seed data.
+3. Backend:
+   - Open in any Spring Boot-compatible IDE (like IntelliJ or Eclipse).
+   - Configure `application.properties` with your DB credentials.
+   - Run the Spring Boot application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Frontend:
+   - Navigate to the React project folder.
+   - Run `npm install` to install dependencies.
+   - Run `npm start` to launch the frontend.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-----------------------------
+FUTURE ENHANCEMENTS:
+- Payment Gateway Integration
+- Email confirmations and notifications
+- Advanced filtering (price, amenities, location)
+- Vendor verification and rating system
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-----------------------------
+DEVELOPER INFO:
+Built with ❤️ by Sree
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
